@@ -9,7 +9,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f5dc; /* 淺咖啡色背景 */
+            background-color: #add8e6; /* 淺藍色背景 */
             color: #333;
         }
         header {
@@ -34,6 +34,7 @@
             margin: auto;
         }
         .day {
+            display: none;
             margin-bottom: 30px;
         }
         .day h2 {
@@ -45,6 +46,9 @@
             text-align: center;
             padding: 10px;
             margin-top: 30px;
+        }
+        .intro-section {
+            display: none;
         }
     </style>
 </head>
@@ -58,9 +62,20 @@
         <a href="#day1">Day 1</a>
         <a href="#day2">Day 2</a>
         <a href="#day3">Day 3</a>
+        <a href="#resort">Resort Info</a>
+        <a href="#philosophy">Our Philosophy</a>
+        <a href="#activities">Activities</a>
+        <a href="#attractions">Nearby Attractions</a>
     </nav>
 
     <section>
+        <h2>Explore the Itinerary</h2>
+        <div>
+            <button onclick="showDay('day1')">Day 1</button>
+            <button onclick="showDay('day2')">Day 2</button>
+            <button onclick="showDay('day3')">Day 3</button>
+        </div>
+
         <div class="day" id="day1">
             <h2>Day 1: Arrival in Kenting</h2>
             <ul>
@@ -99,8 +114,67 @@
         </div>
     </section>
 
+    <section id="resort">
+        <h2>Welcome to SEA-NERGY Resort</h2>
+        <p>Explore our luxurious indoor and outdoor facilities.</p>
+
+        <div>
+            <button onclick="showOutdoor()">Outdoor Introduction</button>
+            <button onclick="showIndoor()">Indoor Introduction</button>
+        </div>
+
+        <div id="outdoor" class="intro-section">
+            <h3>Outdoor Facilities</h3>
+            <p>Relax by the infinity pool, enjoy beach volleyball, and explore our lush gardens.</p>
+            <img src="images/outdoor.jpg" alt="Outdoor Facilities" width="600">
+        </div>
+
+        <div id="indoor" class="intro-section">
+            <h3>Indoor Facilities</h3>
+            <p>Enjoy our luxurious spa, state-of-the-art gym, and fine dining restaurants.</p>
+            <img src="images/indoor.jpg" alt="Indoor Facilities" width="600">
+        </div>
+    </section>
+
+    <section id="philosophy">
+        <h2>Our Philosophy</h2>
+        <p>Coming Soon...</p>
+    </section>
+
+    <section id="activities">
+        <h2>Activities</h2>
+        <p>Experience an array of exciting activities at SEA-NERGY, from yoga sessions to water sports and cultural workshops. Stay tuned for more updates!</p>
+    </section>
+
+    <section id="attractions">
+        <h2>Nearby Attractions</h2>
+        <p>Discover the beauty of Kenting with nearby attractions such as the scenic Longpan Park, bustling Kenting Night Market, and the serene Eluanbi Lighthouse. Plan your adventures with us!</p>
+    </section>
+
     <footer>
         <p>&copy; 2025 SEA-NERGY Resort. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        function showDay(dayId) {
+            const days = document.querySelectorAll('.day');
+            days.forEach(day => day.style.display = 'none');
+            document.getElementById(dayId).style.display = 'block';
+        }
+
+        function showOutdoor() {
+            document.getElementById('outdoor').style.display = 'block';
+            document.getElementById('indoor').style.display = 'none';
+        }
+
+        function showIndoor() {
+            document.getElementById('outdoor').style.display = 'none';
+            document.getElementById('indoor').style.display = 'block';
+        }
+
+        // Default view
+        showDay('day1');
+    </script>
 </body>
 </html>
+
