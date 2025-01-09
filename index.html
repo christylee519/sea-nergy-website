@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SEA-NERGY - Kenting 3-Day Trip</title>
     <style>
+        /* CSS: 定义样式 */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: 、、; /* 淺藍色背景 */
-            color: #5026bc;
+            background-color: #87cefa; /* 蓝色背景 */
+            color: #333;
         }
         header {
-            background-color: #3c1ba5; /* 深藍色 */
+            background-color: #4682b4; /* 深蓝色 */
             color: white;
             padding: 20px;
             text-align: center;
@@ -25,28 +26,42 @@
         nav a {
             margin: 0 15px;
             text-decoration: none;
-            color: #3c1ba5
-        ;
+            color: white;
             font-weight: bold;
         }
         section {
             padding: 20px;
             max-width: 800px;
             margin: auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background-color: #4682b4;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 30px;
+        }
+        button {
+            margin: 10px 5px;
+            padding: 10px 15px;
+            border: none;
+            background-color: #4682b4;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #5a9bd4;
         }
         .day {
             display: none;
             margin-bottom: 30px;
         }
         .day h2 {
-            color: #3c1ba5;
-        }
-        footer {
-            background-color: #3c1ba5;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            margin-top: 30px;
+            color: #4682b4;
         }
         .intro-section {
             display: none;
@@ -60,16 +75,14 @@
     </header>
 
     <nav>
-        <a href="#day1">Day 1</a>
-        <a href="#day2">Day 2</a>
-        <a href="#day3">Day 3</a>
+        <a href="#itinerary">Itinerary</a>
         <a href="#resort">Resort Info</a>
         <a href="#philosophy">Our Philosophy</a>
         <a href="#activities">Activities</a>
         <a href="#attractions">Nearby Attractions</a>
     </nav>
 
-    <section>
+    <section id="itinerary">
         <h2>Explore the Itinerary</h2>
         <div>
             <button onclick="showDay('day1')">Day 1</button>
@@ -127,13 +140,11 @@
         <div id="outdoor" class="intro-section">
             <h3>Outdoor Facilities</h3>
             <p>Relax by the infinity pool, enjoy beach volleyball, and explore our lush gardens.</p>
-            <img src="images/outdoor.jpg" alt="Outdoor Facilities" width="600">
         </div>
 
         <div id="indoor" class="intro-section">
             <h3>Indoor Facilities</h3>
             <p>Enjoy our luxurious spa, state-of-the-art gym, and fine dining restaurants.</p>
-            <img src="images/indoor.jpg" alt="Indoor Facilities" width="600">
         </div>
     </section>
 
@@ -157,6 +168,7 @@
     </footer>
 
     <script>
+        // JavaScript: 控制交互功能
         function showDay(dayId) {
             const days = document.querySelectorAll('.day');
             days.forEach(day => day.style.display = 'none');
@@ -173,9 +185,10 @@
             document.getElementById('indoor').style.display = 'block';
         }
 
-        // Default view
+        // 默认显示第一天行程
         showDay('day1');
     </script>
 </body>
 </html>
+
 
